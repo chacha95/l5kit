@@ -1,0 +1,23 @@
+version: "3.4"
+
+services:
+  l5kit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: "${IMAGE_NAME}:${`IMAGE_VERSION}"
+    tty: true
+    container_name: "${IMAGE_NAME}_${IMAGE_VERSION}"
+    volumes:
+      - "${ROOT_DIR}${DATASET_VOL}:/dataset/lyft-dataset"
+      - "${ROOT_DIR}${OPENDRIVE_DATASET}:/dataset/opendrive"
+    deploy:
+      resources:
+        limits:
+          memory: "$MEMORY"
+          cpus: "$CPUS" 
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["0"]
+              capabilities: [gpu]`
