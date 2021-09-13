@@ -2,7 +2,7 @@ FROM nvidia/cuda:11.1.1-cudnn8-devel
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -y \
-	ca-certificates python3-dev opencv-python git wget sudo
+	ca-certificates python3-dev git wget sudo
 RUN ln -sv /usr/bin/python3 /usr/bin/python
 
 # create a non-root user
@@ -19,3 +19,5 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && \
 
 RUN pip install l5kit
 RUN pip install opencv-python
+
+RUN git clone https://github.com/chacha95/l5kit

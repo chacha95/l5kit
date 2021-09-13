@@ -9,8 +9,7 @@ services:
     tty: true
     container_name: "${IMAGE_NAME}_${IMAGE_VERSION}"
     volumes:
-      - "${ROOT_DIR}${DATASET_VOL}:/dataset/lyft-dataset"
-      - "${ROOT_DIR}${OPENDRIVE_DATASET}:/dataset/opendrive"
+      - "${ROOT_DIR}${DATASET_VOL}:/dataset"
     deploy:
       resources:
         limits:
