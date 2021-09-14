@@ -15,8 +15,8 @@ services:
         limits:
           memory: "$MEMORY"
           cpus: "$CPUS" 
-        reservations:
-          devices:
-            - driver: nvidia
-              device_ids: ["0"]
-              capabilities: [gpu]
+        # reservations:
+        #   devices:
+        #     - driver: nvidia
+        #       device_ids: ["0"]
+        #       capabilities: [gpu]
